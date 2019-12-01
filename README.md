@@ -117,7 +117,21 @@ Ahora veremos dos comandos que nos permititan interactuar entre estos dos repos:
 - `git pull` Este comando descarga todos los cambios que haya en el repo remoto a tu versión local, es * *funadamental* * realizar ese comando antes de ponerse a trabajar, ya que así podremos evitar posibles fallos y trabajar con la última versión. 
 - `git push`  Este comando sube los cambios locales al repositorio remoto, es importante decir que para realizar esta acción el repo local debe estar actualizado (por ello es necesario realizar `git pull` como se ha dicho previemante).
 Estas  intrsucciones únicamente suben o descargan los *commits* no los cambios que has hecho en el *working directory* ni en la *staged area.
+Si usamos `git push --all`se neviaran los *commits* de todas las ramas mientras que si no usamos dicho flag, únicamente los de la rama actual.
 
+## Trabajar sobre un repo que no he creado yo:
+
+Cuando queramos colaborar en un repo remoto que hayamos creado hay distintas posibilidades:
+
+- * *Pull request* *:
+en este caso el propietario del repo no nos ha concedido permisos, para realizar cambios en él deberemos crear una copia de su proyecto (*fork*) y descargar esa copia en nuestro ordenador, una vez hechos los cambios haremos una *pull request*, es decir, le mandaremos una petición donde estan los cambio que queremos añadir, el propietario los leeá y podrá aceptarla o no.
+-* *Tener permisos* *:
+dentro de este caso hay dos opciones, descargar directamente el repo de dicha persona una vez nos haya concedido los permisos de escritura (con `git clone`) y hacer `pull`y `push`como si fuera nuestro, el único inconveniente es que trabajaremos todos con e mismo repo y no estará en nuestro perfil.
+La otra oción es hacer una copia (`fork`) y descargarla, una vez hecho esto deberemos sincronizar nuestro repo local con nuestra copia (no es necesario por que se hace automático al hacer `git clone`) y sincronizarlo con el repo de dicha perosna, para ello ejecutar: `git remote add upstream <url del repo>` de esta forma ambos estaán sincronizados. ¿Por qué hacer esto?
+Por que así podremos controlar los cambios que mandamos, igual usamos ramas auxiliares que no queremos mandar al repo central, de esta forma evitamos eso, subiendolas unicamente a nuestro repo, también tendremos una copia en nuestro propio pefil, luego a la hora de interactuar será mucho más sencillo.
+Para actualizar ahora deberemos usar `git pull --all`para tomar los cambios de ambos repos.
+A la hora de hacer push deberemos indicar a cual por lo que primero debermos hacer push al nuestro (*origin*) y luego al central (`git push upstream`), existe la opción de crear un alias para hacer los dos en el mismo comando:
+`git config --global alias.pushall '!git remote | xargs -L1 git push --all` de esta forma al hacer `git pushall`se envian los cambios a ambos. 
 
 
 
