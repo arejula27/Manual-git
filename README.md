@@ -123,9 +123,9 @@ Si usamos `git push --all`se neviaran los *commits* de todas las ramas mientras 
 
 Cuando queramos colaborar en un repo remoto que hayamos creado hay distintas posibilidades:
 
-- * *Pull request* *:
+- **Pull request**:
 en este caso el propietario del repo no nos ha concedido permisos, para realizar cambios en él deberemos crear una copia de su proyecto (*fork*) y descargar esa copia en nuestro ordenador, una vez hechos los cambios haremos una *pull request*, es decir, le mandaremos una petición donde estan los cambio que queremos añadir, el propietario los leeá y podrá aceptarla o no.
-- * *Tener permisos* *:
+- **Tener permisos**:
 dentro de este caso hay dos opciones, descargar directamente el repo de dicha persona una vez nos haya concedido los permisos de escritura (con `git clone`) y hacer `pull`y `push`como si fuera nuestro, el único inconveniente es que trabajaremos todos con e mismo repo y no estará en nuestro perfil.
 La otra oción es hacer una copia (`fork`) y descargarla, una vez hecho esto deberemos sincronizar nuestro repo local con nuestra copia (no es necesario por que se hace automático al hacer `git clone`) y sincronizarlo con el repo de dicha perosna, para ello ejecutar: `git remote add upstream <url del repo>` de esta forma ambos estaán sincronizados. ¿Por qué hacer esto?
 Por que así podremos controlar los cambios que mandamos, igual usamos ramas auxiliares que no queremos mandar al repo central, de esta forma evitamos eso, subiendolas unicamente a nuestro repo, también tendremos una copia en nuestro propio pefil, luego a la hora de interactuar será mucho más sencillo.
