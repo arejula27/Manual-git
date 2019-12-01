@@ -1,5 +1,5 @@
 # Manual git
-## Aprende los comandos basicos de git
+## Aprende los comandos básicos de git
 
 Lo primero que se debe hacer es intalar git, muchos ordenadores lo tienen ya instalado de serie. 
 Para comprobralo introducir en terminal: `git --version` este nos mostrará la versión actual de git instalada.
@@ -12,7 +12,7 @@ Date:   Fri Nov 29 21:27:00 2019 +0100
 
     Esto es un commit
 ```
-Como veremos mas adelante estos commits guardan mucha información, entre otras cosas el nombre del autor y su correo
+Como veremos más adelante estos commits guardan mucha información, entre otras cosas el nombre del autor y su correo
 Para evitar que git nos pregunte por estos datos continuamente cada vez que realizamos una acción se deberá configurar de la siguiente manera
 ```
 $ git config --global user.name "nombre"
@@ -26,11 +26,11 @@ yo personalmente uso visual studio code or lo que puse `code`.
 ## Entendiendo git:
 Git es un sistema de control de versiones, esto quiere decir que nos ayudará a guardar las distintas etapas de nuestro proyecto, a hacer deshacer y tomar distintos "caminos" (branches).
 
-Para ello disponemos de distintas areas:
+Para ello disponemos de distintas áreas:
 
-- **Working directory**: este area es la que usamos con y sin git, en ella trabajamos, hacemos modificaciones y guardamos nuestros archivos en su estado actual.
+- **Working directory**: este área es la que usamos con y sin git, en ella trabajamos, hacemos modificaciones y guardamos nuestros archivos en su estado actual.
 
-- **Staged area**: esta es una fase previa de nuestro archivo, esta nos permite "guardar cambios" mientras seguimos modificando nuestro archivo, y si decidimos volver atras podemos deshacer todos los cambios realizados a excepcion de los localizados en esta zona, para ver que archivos estan en esta zona se usa el comando: `git status`. Este nos muestra algo así: 
+- **Staged area**: esta es una fase previa de nuestro archivo, esta nos permite "guardar cambios" mientras seguimos modificando nuestro archivo, y si decidimos volver atras podemos deshacer todos los cambios realizados a excepción de los localizados en esta zona, para ver que archivos estan en esta zona se usa el comando: `git status`. Este nos muestra algo así: 
 
 
 
@@ -51,7 +51,7 @@ Vemos que aparece nuestro archivo *first_file.txt* en ambas zonas, esto es debe 
 Es muy importante trasladar los cambios de zona en el momento adecuado, sino puede que cuando querramos echar marcha atras deshagamos mas de la cuenta.
 Veremos mas adelante como hacer estos cambios, ahora solo explico las zonas.
 
--**Commited**: Una vez hayamos avanzado en nuestro proyecto y querramos indicar un momento de este realizaremos un commit, tras desarrollar tres funciones que consideras de gran relevancia decides que este estado del proyecto es relevante, entonces realizas un commit, este "punto de gurdado" en tu proyecto te permitirá volver a él, deshacerlo o simplemente guardar el conetino *staged area* de forma permanente, de tal forma que esta se vacia y poder acumular en ella nuevos cambios. A la hora de realizar un *commit*  es importente escribir bien su descripción ya que nos servira más adelante para saber que se guardo en dicho commit y saber si queremos volver a trabajar desde él o no (si por que todos nos equivocamos y a veces es más facil volver a cierto punto de nuestro proyecto que pasarte horas y horas buscando un fallo).
+-**Commited**: Una vez hayamos avanzado en nuestro proyecto y querramos indicar un momento de este realizaremos un commit, tras desarrollar tres funciones que consideras de gran relevancia decides que este estado del proyecto es relevante, entonces realizas un commit, este "punto de gurdado" en tu proyecto te permitirá volver a él, deshacerlo o simplemente guardar el conetino *staged area* de forma permanente, de tal forma que esta se vacia y poder acumular en ella nuevos cambios. A la hora de realizar un *commit*  es importente escribir bien su descripción ya que nos servirá más adelante para saber que se guardo en dicho commit y saber si queremos volver a trabajar desde él o no (si por que todos nos equivocamos y a veces es más facil volver a cierto punto de nuestro proyecto que pasarte horas y horas buscando un fallo).
 
 
 ## Comandos básicos:
@@ -76,7 +76,7 @@ Date:   Fri Nov 29 21:27:00 2019 +0100
 
     Esto es un commit
 ```
-Vemos que nso indica varias cosas: el nombre del autor que realizo el commit, cuando solo nosostros trabajamos esto no tiene mucha importancia pero en un proyecto colaborativo si es muy interesante saber quien ha realizado cada cambio.
+Vemos que nos indica varias cosas: el nombre del autor que realizo el commit, cuando solo nosostros trabajamos esto no tiene mucha importancia pero en un proyecto colaborativo si es muy interesante saber quien ha realizado cada cambio.
 También nos indica la fecha y hora cuando se realizó el commit. Se puede leer: `(HEAD -> master)` esto nos indica en que rama estamos (de ramas se hablará más adelante) y que estamos en el último commit ya que pone *HEAD* . Cada commit tiene un código de identificación asociado (el número largo) y por último el comemtario de este.
 
 
@@ -88,12 +88,12 @@ Otro uso es crear una nueva rama:`git checkout -b nombre_rama` o simplemente via
 Ahora que ya conoces los comandos báscos solo te queda practicar, probar y experimentar, una vez entiendas estos puedes ver nuevos mediante el comando `git --help`
 
 ## Ramas
-En git tenemos la opotunidad de establecer distintas ramas, esto quiere decir que podemos tomar caminos alternativos para nuestro proyecto y escoger el que ,más nos convenga:
+En git tenemos la opotunidad de establecer distintas ramas, esto quiere decir que podemos tomar caminos alternativos para nuestro proyecto y escoger el que más nos convenga:
 
 ![foto de ramas en git](https://github.com/arejula27/Manual-git/blob/master/assets/ramas.png)
 
-Como vemos esto nos permite poder realizar distintas "historias de guardado que no se intervienen" esto nos puede ser de gran utilidad a la hora de depurar, ya que podemos realizar todos los cambios sin perder el fichero original, también a la hora de desarrollar nuevas fases del proyecto, ya que si estas "rompen" la anterior, el proyecto orignal no sufre cambios.
-La rama central se denomina *master*, mientras que las demás pueden llevar el nombre que escojamos, por supuesto, en cualquier momento podemos fusionar dos ramas uniendo así todos los cambios (una vez solucionado el problema en la rama de deouración la unimos a master, estando asi la rama central arreglada).
+Como vemos esto nos permite poder realizar distintas "historias de guardado" esto nos puede ser de gran utilidad a la hora de depurar, ya que podemos realizar todos los cambios sin perder el fichero original, también a la hora de desarrollar nuevas fases del proyecto, ya que si estas "rompen" la anterior, el proyecto orignal no sufre cambios.
+La rama central se denomina *master*, mientras que las demás pueden llevar el nombre que escojamos, por supuesto, en cualquier momento podemos fusionar dos ramas uniendo así todos los cambios (una vez solucionado el problema en la rama de depuración la unimos a master, estando así la rama central arreglada).
 Los comados necesarios son:
 - `git branch` Nos permite ver el listado de ramas
 - `git checkout <branch name>` Nos permite viajar a una rama
@@ -124,10 +124,10 @@ Si usamos `git push --all`se neviaran los *commits* de todas las ramas mientras 
 Cuando queramos colaborar en un repo remoto que hayamos creado hay distintas posibilidades:
 
 - **Pull request**:
-en este caso el propietario del repo no nos ha concedido permisos, para realizar cambios en él deberemos crear una copia de su proyecto (*fork*) y descargar esa copia en nuestro ordenador, una vez hechos los cambios haremos una *pull request*, es decir, le mandaremos una petición donde estan los cambio que queremos añadir, el propietario los leeá y podrá aceptarla o no.
+En este caso el propietario del repo no nos ha concedido permisos, para realizar cambios en él deberemos crear una copia de su proyecto (*fork*) y descargar esa copia en nuestro ordenador, una vez hechos los cambios haremos una *pull request*, es decir, le mandaremos una petición donde estan los cambio que queremos añadir, el propietario los leeá y podrá aceptarla o no.
 - **Tener permisos**:
 dentro de este caso hay dos opciones, descargar directamente el repo de dicha persona una vez nos haya concedido los permisos de escritura (con `git clone`) y hacer `pull`y `push`como si fuera nuestro, el único inconveniente es que trabajaremos todos con e mismo repo y no estará en nuestro perfil.
-La otra oción es hacer una copia (*fork*) y descargarla, una vez hecho esto deberemos sincronizar nuestro repo local con nuestra copia (no es necesario por que se hace automático al hacer `git clone`) y sincronizarlo con el repo de dicha perosna, para ello ejecutar: `git remote add upstream <url del repo>` de esta forma ambos estaán sincronizados. ¿Por qué hacer esto?
+La otra oción es hacer una copia (*fork*) y descargarla, una vez hecho esto deberemos sincronizar nuestro repo local con nuestra copia (no es necesario por que se hace automático al hacer `git clone`) y sincronizarlo con el repo de dicha perosna, para ello ejecutar: `git remote add upstream <url del repo>` de esta forma ambos están sincronizados. ¿Por qué hacer esto?
 Por que así podremos controlar los cambios que mandamos, igual usamos ramas auxiliares que no queremos mandar al repo central, de esta forma evitamos eso, subiendolas unicamente a nuestro repo, también tendremos una copia en nuestro propio pefil, luego a la hora de interactuar será mucho más sencillo.
 Para actualizar ahora deberemos usar `git pull --all`para tomar los cambios de ambos repos.
 A la hora de hacer push deberemos indicar a cual por lo que primero debermos hacer push al nuestro (*origin*) y luego al central (`git push upstream`), existe la opción de crear un alias para hacer los dos en el mismo comando:
