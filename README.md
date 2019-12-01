@@ -91,3 +91,14 @@ Ahora que ya conoces los comandos báscos solo te queda practicar, probar y expe
 En git tenemos la opotunidad de establecer distintas ramas, esto quiere decir que podemos tomar caminos alternativos para nuestro proyecto y escoger el que ,más nos convenga:
 
 ![foto de ramas en git](https://github.com/arejula27/Manual-git/blob/master/assets/ramas.png)
+
+Como vemos esto nos permite poder realizar distintas "historias de guardado que no se intervienen" esto nos puede ser de gran utilidad a la hora de depurar, ya que podemos realizar todos los cambios sin perder el fichero original, también a la hora de desarrollar nuevas fases del proyecto, ya que si estas "rompen" la anterior, el proyecto orignal no sufre cambios.
+La rama central se denomina *master*, mientras que las demás pueden llevar el nombre que escojamos, por supuesto, en cualquier momento podemos fusionar dos ramas uniendo así todos los cambios (una vez solucionado el problema en la rama de deouración la unimos a master, estando asi la rama central arreglada).
+Los comados necesarios son:
+- `git branch` Nos permite ver el listado de ramas
+- `git checkout <branch name>` Nos permite viajar a una rama
+- `git checkout -b <branch name> Crea una rama y viaja a ella
+- `git merge <bramch name>` Fusiona la rama actual con la escogida, si estamos en *master* y fusionamos una rama, todos los cambios de esa rama iran a master, mientras que si estamos en cualquier rama y fusionamos con master esa rama se "actualizara" con los cambios de master. También se puede hacer `git merge` entre ramas que no sean master.
+Habra veces que nos avise de un *merge confict* esto significa que al fusionar dos ramas se ha realizaod un cambio en la misma linea, por lo que no sabe cual dejar en la fusión. Únicamente deberemos decirle si queremos conservar los cambios de la rama atcual (current changes) o los datos de la rama que viene (incoming changes), tras esto habrá que hacer un commit y tendrías las ramas fusionadas.
+Esto resulta mas sencillo con un editor de texto como vs code.
+
