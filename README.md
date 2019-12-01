@@ -86,3 +86,8 @@ También nos permite viajar a los distintos commits: `git checkout código_ident
 Otro uso es crear una nueva rama:`git checkout -b nombre_rama` o simplemente viajar a una existente: `git checkout nombre_rama`
 
 Ahora que ya conoces los comandos báscos solo te queda practicar, probar y experimentar, una vez entiendas estos puedes ver nuevos mediante el comando `git --help`
+
+## Ramas
+En git tenemos la opotunidad de establecer distintas ramas, esto quiere decir que podemos tomar caminos alternativos para nuestro proyecto y escoger el que ,más nos convenga:
+
+![foto de ramas en git](https://github.com/arejula27/Manual-git/blob/master/assets/ramas.png)
