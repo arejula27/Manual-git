@@ -100,5 +100,27 @@ Los comados necesarios son:
 - `git checkout -b <branch name> Crea una rama y viaja a ella
 - `git merge <bramch name>` Fusiona la rama actual con la escogida, si estamos en *master* y fusionamos una rama, todos los cambios de esa rama iran a master, mientras que si estamos en cualquier rama y fusionamos con master esa rama se "actualizara" con los cambios de master. También se puede hacer `git merge` entre ramas que no sean master.
 Habra veces que nos avise de un *merge confict* esto significa que al fusionar dos ramas se ha realizaod un cambio en la misma linea, por lo que no sabe cual dejar en la fusión. Únicamente deberemos decirle si queremos conservar los cambios de la rama atcual (current changes) o los datos de la rama que viene (incoming changes), tras esto habrá que hacer un commit y tendrías las ramas fusionadas.
-Esto resulta mas sencillo con un editor de texto como vs code.
+Esto resulta más sencillo con un editor de texto como vs code.
+
+## Repositorios remotos:
+
+Hasta ahora hemos aprendido a usar git en forma local (en nuestro ordenador) pero este también nos permite tenerlo en forma remota, es decir tener una copia en internet, hay muchos sitios donde poder hacer esto, yo personalmente los tengo en github.
+
+Esto nos permite tener una copia de seguridad de nuestros proyectos, poder pasarlo de un ordendor a otro de forma sencilla o poder trabajar varias personas en un proyecto, ya que este se actualiza en el repositorio remoto. Para usarlos hay dos opciones, crear el repositorio remoto y luego pasarlo al ordenador o viceversa.
+- Repo remoto a local:
+En este caso debemos crear el repositorio remoto, una vez hecho eso debemos ir a la carpeta donde querramos ponerlo y usar el comando `git clone <url repo>` de tal forma que se crea una carpeta con el nombre del repo y todos sus ficheros y carpetas entro, esta ya estara unido al remoto.
+- Repo local a remoto:
+En este caso hemos desarrollado un repo local y queremos subirlo, para ello podemos usar aplicaciones como *github desktop* o crear un repo remoto vacío y usar el siguiente comado `git romote add origin <url repo>`
+De esta forma ya estan unidos.
+
+Ahora veremos dos comandos que nos permititan interactuar entre estos dos repos:
+- `git pull` Este comando descarga todos los cambios que haya en el repo remoto a tu versión local, es * *funadamental* * realizar ese comando antes de ponerse a trabajar, ya que así podremos evitar posibles fallos y trabajar con la última versión. 
+- `git push`  Este comando sube los cambios locales al repositorio remoto, es importante decir que para realizar esta acción el repo local debe estar actualizado (por ello es necesario realizar `git pull` como se ha dicho previemante).
+Estas  intrsucciones únicamente suben o descargan los *commits* no los cambios que has hecho en el *working directory* ni en la *staged area.
+
+
+
+
+
+
 
